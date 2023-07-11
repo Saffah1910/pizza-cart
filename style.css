@@ -1,0 +1,46 @@
+body{
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+.shoppingCart{
+    background-color: greenyellow;
+    text-align: center;
+}
+.checkout{
+    background-color: greenyellow;
+    text-align: center;
+}
+.pizza{    
+    border: 1px solid black;
+    padding: 1em;
+    margin: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 0.5em;
+
+
+}
+.small{
+    background-color:darkgoldenrod;
+    flex:1;
+
+}
+.medium{
+    background-color:chocolate;
+    flex:1;
+}
+   
+.large{
+    background-color: crimson;
+    flex:1;
+}
+.contact-info{
+    background-color: chartreuse;
+   
+}
+@media(min-width:960px){
+    .pizzas{
+        display: flex;
+    }
+    
+}
