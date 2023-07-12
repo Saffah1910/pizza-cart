@@ -51,14 +51,6 @@ h1{
     background-color: #2a9d8f;
    
 }
-.green{
-    border: 1px solid;
-    margin: 0 auto;
-    padding: 15px 10px 15px 50px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-color: lightgreen;
-}
 @media(min-width:960px){
     .pizzas{
         display: flex;

@@ -34,7 +34,8 @@
                 <span x-text="largepizzacount.toFixed(2)"></span>
             </p>
             <p>Total Cost <span x-text="total.toFixed(2)"></span></p>
-            <p x-text="message" x-show="paymessage"></p>
+            <p style="color: green;" x-text="successmessage" x-show="paymessage" ></p>
+            <p style="color: red;" x-text="failuremessage" x-show="paymessage"></p>
             <div x-show="openpay">Payment amount: <input x-model="payment">
                 <button @click="enoughmoney" >PAY</button>
             </div>

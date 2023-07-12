@@ -6,7 +6,8 @@ function Order() {
         total: 0,
         buy: false,
         payment: 0,
-        message: "",
+        successmessage: "",
+        failuremessage:"",
         openpay: false,
         paymessage: false,
         opencheckout: true,
@@ -63,7 +64,7 @@ function Order() {
         enoughmoney() {
             if (this.total <= this.payment) {
 
-                this.message = "Enjoy your pizza";
+                this.successmessage = "Enjoy your pizza";
                 this.paymessage = true;
 
                 this.total = 0;
@@ -74,7 +75,7 @@ function Order() {
 
             } else {
                 this.paymessage = true;
-                this.message = "Sorry - that is not enough money!";
+                this.failuremessage = "Sorry - that is not enough money!";
                 setTimeout(() => {
                     this.paymessage = false
                 }, 3000);
@@ -95,7 +96,7 @@ function Order() {
         buyMediumPizza() {
             if (this.buy = true) {
 
-                this.total  += 89.00;
+                this.total += 89.00;
                 this.mediumpizzacount += 89.00;
 
             }
@@ -103,7 +104,7 @@ function Order() {
         buyLargePizza() {
             if (this.buy = true) {
 
-                this.total  += 120.00;
+                this.total += 120.00;
                 this.largepizzacount += 120.00;
             }
 
