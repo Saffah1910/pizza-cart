@@ -10,9 +10,9 @@ function Order() {
         openpay: false,
         paymessage: false,
         opencheckout: true,
-        small: false,
-        medium: false,
-        large: false,
+        // small: false,
+        // medium: false,
+        // large: false,
 
 
 
@@ -85,26 +85,26 @@ function Order() {
             this.opencheckout = false;
         },
         buyPizza() {
-            if (this.buy = true && this.small == false) {
+            if (this.buy = true) {
 
-                this.smallpizzacount = 49.00;
+                this.total += 49.00;
+                this.smallpizzacount += 49.00;
 
-                this.total + 49.00;
             }
         },
         buyMediumPizza() {
             if (this.buy = true) {
 
-                this.mediumpizzacount = 89.00;
+                this.total  += 89.00;
+                this.mediumpizzacount += 89.00;
 
-                this.total = + 89.00;
             }
         },
         buyLargePizza() {
             if (this.buy = true) {
 
-                this.largepizzacount = 120.00;
-                this.total = + 120.00;
+                this.total  += 120.00;
+                this.largepizzacount += 120.00;
             }
 
 
