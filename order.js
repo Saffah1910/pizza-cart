@@ -1,50 +1,114 @@
 function Order() {
     return {
-        count1: 0,
-        count2: 0,
-        count3: 0,
+        smallpizzacount: 0,
+        mediumpizzacount: 0,
+        largepizzacount: 0,
         total: 0,
+        buy: false,
+        payment: 0,
+        message: "",
+        openpay: false,
+        paymessage: false,
+        opencheckout: true,
+        small: false,
+        medium: false,
+        large: false,
+
+
 
 
         smallplus() {
-           
-            this.count1 += 49.99,
-            this.total += 49.99
+            if (this.buy == true) {
+
+                this.smallpizzacount += 49.00;
+                this.total += 49.00
+            }
+
         },
         smallminus() {
-            if(this.count1 > 0){
+            if (this.smallpizzacount > 0 && this.buy == true) {
 
-                this.count1 -= 49.99,
-                this.total -= 49.99
+                this.smallpizzacount -= 49.00;
+                this.total -= 49.00
             }
 
         },
         mediumplus() {
-            this.count2 += 89.99,
-            this.total += 89.99
+            if (this.buy == true) {
+                this.mediumpizzacount += 89.00;
+                this.total += 89.00
+            }
         },
         mediumminus() {
-            if(this.count2 > 0){
+            if (this.mediumpizzacount > 0 && this.buy == true) {
 
-                this.count2 -= 89.99,
-                this.total -= 89.99
+                this.mediumpizzacount -= 89.00;
+                this.total -= 89.00
             }
         },
         largeplus() {
-            this.count3 += 120.99,
-            this.total += 120.99
-        },
-        largeminus(){
-            if(this.count3 > 0){
+            if (this.buy == true) {
+                this.largepizzacount += 120.00;
+                this.total += 120.00
+            }
 
-                this.count3 -= 120.99,
-                this.total -= 120.99
+        },
+        largeminus() {
+            if (this.largepizzacount > 0 && this.buy == true) {
+
+                this.largepizzacount -= 120.00;
+                this.total -= 120.00
             }
         },
-        // enoughmoney(){
-        //     if(total >= )
-        // }
+        enoughmoney() {
+            if (this.total <= this.payment) {
 
+                this.message = "Enjoy your pizza";
+                this.paymessage = true;
+
+                this.total = 0;
+                this.smallpizzacount = 0;
+                this.mediumpizzacount = 0;
+                this.largepizzacount = 0;
+
+
+            } else {
+                this.paymessage = true;
+                this.message = "Sorry - that is not enough money!";
+                setTimeout(() => {
+                    this.paymessage = false
+                }, 3000);
+            }
+        },
+        paybutton() {
+            this.openpay = true;
+            this.opencheckout = false;
+        },
+        buyPizza() {
+            if (this.buy = true && this.small == false) {
+
+                this.smallpizzacount = 49.00;
+
+                this.total + 49.00;
+            }
+        },
+        buyMediumPizza() {
+            if (this.buy = true) {
+
+                this.mediumpizzacount = 89.00;
+
+                this.total = + 89.00;
+            }
+        },
+        buyLargePizza() {
+            if (this.buy = true) {
+
+                this.largepizzacount = 120.00;
+                this.total = + 120.00;
+            }
+
+
+        }
     }
 };
 

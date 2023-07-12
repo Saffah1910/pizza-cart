@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="//unpkg.com/alpinejs" defer></script>
+
     <title>Perfect Pizza</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,25 +21,30 @@
             <p>Small
                 <button @click="smallplus"><span>+</span></button>
                 <button @click="smallminus"><span>-</span></button>
-                <span x-text="count1"></span>
+                <span x-text="smallpizzacount.toFixed(2)"></span>
             </p>
             <p>Medium
                 <button @click="mediumplus"><span>+</span></button>
                 <button @click="mediumminus"><span>-</span></button>
-                <span x-text="count2"></span>
+                <span x-text="mediumpizzacount.toFixed(2)"></span>
             </p>
             <p>Large
                 <button @click="largeplus"><span>+</span></button>
                 <button @click="largeminus"><span>-</span></button>
-                <span  x-text="count3"></span>
+                <span x-text="largepizzacount.toFixed(2)"></span>
             </p>
-            <p>Total Cost <span x-text="total"></span></p>
-        
-            <div>Payment amount: <textarea></textarea></div>
-            <button>Pay</button>
+            <p>Total Cost <span x-text="total.toFixed(2)"></span></p>
+            <p x-text="message" x-show="paymessage"></p>
+            <div x-show="openpay">Payment amount: <input x-model="payment">
+                <button @click="enoughmoney" >PAY</button>
+            </div>
+
+            <button x-on:click="paybutton" x-show="opencheckout">Checkout</button>
+
+
         </div>
 
-   
+
 
         <div class="pizzas">
 
@@ -53,7 +59,7 @@
                     dolore
                     magna aliqua.
                 </div>
-                <button @click="smallplus">Add</button>
+                <button @click="buyPizza">Add</button>
             </div>
 
             <div class="pizza medium">
@@ -64,7 +70,7 @@
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </div>
-                <button @click="mediumplus">Add</button>
+                <button  @click="buyMediumPizza">Add</button>
             </div>
 
             <div class="pizza large">
@@ -75,7 +81,7 @@
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                     pariatur.
                 </div>
-                <button @click="largeplus">Add</button>
+                <button  @click="buyLargePizza">Add</button>
             </div>
         </div>
 
